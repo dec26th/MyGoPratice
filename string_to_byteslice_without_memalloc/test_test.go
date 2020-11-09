@@ -1,15 +1,17 @@
 package string_to_byteslice_without_memalloc
 
 import (
-	"strconv"
 	"testing"
 )
 
-// 275656681	         4.18 ns/op	       0 B/op	       0 allocs/op
+var testStc = "12323523rlkwnflsdjp23jlkqnejk123kl1 2ei1u2h1 2k312o31j2lwn12l3j12lk3nmenl1k2j3l12elk12lk3j1l2nwlmn12kjw1"
+
+
+//BenchmarkS2B-12                 361255360               10.7 ns/op             0 B/op          0 allocs/op
 func BenchmarkS2B(b *testing.B) {
 	result := make([]string, b.N)
 	for i := 0; i < b.N; i++ {
-		result[i] = strconv.Itoa(i)
+		result[i] = testStc
 	}
 	test := make([][]byte, b.N)
 	b.ReportAllocs()
@@ -20,11 +22,11 @@ func BenchmarkS2B(b *testing.B) {
 	}
 }
 
-//BenchmarkDirect-12    	46649576	        24.5 ns/op	       8 B/op	       1 allocs/op
+//BenchmarkDirectS2B-12           12571646                80.5 ns/op           112 B/op          1 allocs/op
 func BenchmarkDirectS2B(b *testing.B) {
 	ss := make([]string, b.N)
 	for i := 0; i < b.N; i++ {
-		ss[i] = strconv.Itoa(i)
+		ss[i] = testStc
 	}
 	sb := make([][]byte, b.N)
 	b.ReportAllocs()
@@ -35,11 +37,11 @@ func BenchmarkDirectS2B(b *testing.B) {
 	}
 }
 
-//479128580	        11.4 ns/op	       0 B/op	       0 allocs/op
+//BenchmarkB2S-12                 489869499               52.6 ns/op             0 B/op          0 allocs/op
 func BenchmarkB2S(b *testing.B) {
 	sb := make([][]byte, b.N)
 	for i := 0; i < b.N; i++ {
-		sb[i] = []byte{byte(i)}
+		sb[i] = []byte(testStc)
 	}
 	ss := make([]string, b.N)
 	b.ResetTimer()
@@ -50,11 +52,11 @@ func BenchmarkB2S(b *testing.B) {
 	}
 }
 
-//100000000	        10.3 ns/op	       0 B/op	       0 allocs/op
+//BenchmarkDirectB2S-12            3257692               490 ns/op             112 B/op          1 allocs/op
 func BenchmarkDirectB2S(b *testing.B) {
 	sb := make([][]byte, b.N)
 	for i := 0; i < b.N; i++ {
-		sb[i] = []byte{byte(i)}
+		sb[i] = []byte(testStc)
 	}
 	ss := make([]string, b.N)
 	b.ResetTimer()
