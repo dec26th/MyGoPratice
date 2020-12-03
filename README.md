@@ -19,3 +19,10 @@ Buffer2 use`buffer.Write()` while Buffer use `buffer.WriteString()`, and in Buff
 
 ![bench_i2s](./pic/bench_i2s.png)
 
+
+
+ 
+
+# Append In Slice
+
+b := appen(a[:i], a[i+1:]...) may cause the change slice a
