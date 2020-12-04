@@ -9,8 +9,8 @@ import (
 )
 
 func TestJsonUnmarshalSlice(t *testing.T) {
-	test1 := []string {"1","2", "3"}
-	test2:= `["1", "2", "3"]`
+	test1 := []string{"1", "2", "3"}
+	test2 := `["1", "2", "3"]`
 	test3 := `["1","2","3"]`
 
 	temp, err := json.Marshal(test1)

@@ -6,7 +6,6 @@ import (
 
 var testStc = "12323523rlkwnflsdjp23jlkqnejk123kl1 2ei1u2h1 2k312o31j2lwn12l3j12lk3nmenl1k2j3l12elk12lk3j1l2nwlmn12kjw1"
 
-
 func BenchmarkS2B(b *testing.B) {
 	result := make([]string, b.N)
 	for i := 0; i < b.N; i++ {

@@ -20,7 +20,7 @@ func BenchmarkSprintf(b *testing.B) {
 	b.ResetTimer()
 	b.ReportAllocs()
 	for i := 0; i < b.N; i++ {
-		result = fmt.Sprintf("%s%s",result, "a")
+		result = fmt.Sprintf("%s%s", result, "a")
 	}
 }
 

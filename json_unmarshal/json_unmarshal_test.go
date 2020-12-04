@@ -36,6 +36,7 @@ func TestJsonUnmarshal(t *testing.T) {
 type a struct {
 	A int `json:"a"`
 }
+
 func TestJsonZeroMethodInterface(t *testing.T) {
 	{
 		test1 := []interface{}{a{}}[0]
@@ -48,4 +49,3 @@ func TestJsonZeroMethodInterface(t *testing.T) {
 		fmt.Printf("%v %+v, %v\n", err, test1, reflect.TypeOf(test1))
 	}
 }
-

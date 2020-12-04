@@ -25,4 +25,8 @@ Buffer2 use`buffer.Write()` while Buffer use `buffer.WriteString()`, and in Buff
 
 # Append In Slice
 
-b := appen(a[:i], a[i+1:]...) may cause the change slice a
+b := append(a[:i], a[i+1:]...) may cause the change slice a
+
+# Function as Option
+
+Function as Option makes API easier to understand.

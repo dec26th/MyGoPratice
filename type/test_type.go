@@ -9,5 +9,5 @@ type test struct {
 type testPtr = *test
 
 func (t testPtr) T() {
-	t.b  = 1
+	t.b = 1
 }

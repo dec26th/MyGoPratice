@@ -11,6 +11,6 @@ func TestJson(t *testing.T) {
 	resultStrSlice, _ := json.Marshal(testSlice)
 	fmt.Println("json string slice", string(resultStrSlice)) // ["result","test","hello"]
 
-	resultStringjson, _ :=json.Marshal(string(resultStrSlice))
-	fmt.Println("json string:", string(resultStringjson))  // "[\"result\",\"test\",\"hello\"]"
+	resultStringjson, _ := json.Marshal(string(resultStrSlice))
+	fmt.Println("json string:", string(resultStringjson)) // "[\"result\",\"test\",\"hello\"]"
 }
