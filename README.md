@@ -30,3 +30,9 @@ b := append(a[:i], a[i+1:]...) may cause the change slice a
 # Function as Option
 
 Function as Option makes API easier to understand.
+
+
+
+# MAP SEARCH JUST INSANE!!!!
+
+![map_doubleloop](./pic/map_doubleloop_search.png)
