@@ -36,3 +36,7 @@ Function as Option makes API easier to understand.
 # MAP SEARCH JUST INSANE!!!!
 
 ![map_doubleloop](./pic/map_doubleloop_search.png)
+
+# MisUnderstanding of func `strings.Trim(a, b)`
+
+the func will ensure that the output of the func must not contain any of the char in the string b.
