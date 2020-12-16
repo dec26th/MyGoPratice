@@ -1,8 +1,9 @@
-package main
+package reviver
 
 import (
 	"fmt"
 	"sync"
+	"testing"
 )
 
 var wg = sync.WaitGroup{}
@@ -16,16 +17,16 @@ func (t *T) Print() {
 	wg.Done()
 }
 
-func main() {
+func TestReciver(t *testing.T) {
 
 	data := []T{{"1"}, {"2"}, {"3"}, {"4"}, {"5"}}
 
-	//{
-	//	for i := 0; i < len(data); i++ {
-	//		wg.Add(1)
-	//		go data[i].Print()
-	//	}
-	//}
+	{
+		for i := 0; i < len(data); i++ {
+			wg.Add(1)
+			go data[i].Print()
+		}
+	}
 	{
 		for _, v := range data {
 			wg.Add(1)
