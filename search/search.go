@@ -2,7 +2,6 @@ package search
 
 type Filter func(s []byte) bool
 
-
 func getDoubleLoop(target []byte) Filter {
 	return func(s []byte) bool {
 		for i := 0; i < len(s); i++ {
@@ -23,7 +22,6 @@ func isInSlice(b byte, s []byte) bool {
 
 	return true
 }
-
 
 func getMap(target []byte) Filter {
 	return func(s []byte) bool {
